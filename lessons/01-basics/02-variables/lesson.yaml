@@ -1,0 +1,7 @@
+package: variables
+title: Variables
+unsolved_state: test-fail
+concepts:
+  - variables
+  - string concatenation
+difficulty: beginner

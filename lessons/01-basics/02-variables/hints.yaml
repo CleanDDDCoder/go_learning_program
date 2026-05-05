@@ -1,0 +1,6 @@
+- hint: Use the + operator to concatenate strings.
+  level: 1
+- hint: Make sure to include the exclamation mark at the end of the greeting.
+  level: 2
+- hint: Return "Hello, " + name + "!" using string concatenation.
+  level: 3

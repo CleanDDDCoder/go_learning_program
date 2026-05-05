@@ -1,0 +1,6 @@
+- hint: The zero value for strings in Go is an empty string "".
+  level: 1
+- hint: You need to declare a variable using the `var` keyword or `:=` shorthand.
+  level: 2
+- hint: The variable should be named `name` and hold a string value like "Alice".
+  level: 3
