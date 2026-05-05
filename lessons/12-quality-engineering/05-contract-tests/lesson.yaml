@@ -1,10 +1,10 @@
-package: testdesign
-title: Test Design Patterns
+package: contracttests
+title: Contract Testing for Interfaces
 unsolved_state: test-fail
 concepts:
-  - table-driven-tests
-  - subtests
-  - test-organizaton
+  - contract-tests
+  - interface-testing
+  - behavioral-tests
 difficulty: advanced
 lesson_type: unit
 min_go_version: "1.22"
@@ -13,7 +13,7 @@ run_modes:
 solution_mode: single-file
 optional: false
 prerequisites:
-  - 05-testing/01-table-driven-tests
   - 06-interfaces-and-fakes/01-interfaces
+  - 12-quality-engineering/01-test-design
 recommended_prerequisites:
-  - 07-basic-concurrency/01-channels
+  - 12-quality-engineering/03-property-style-tests

@@ -1,0 +1,18 @@
+package: fuzzing
+title: Fuzzing with Go 1.18+
+unsolved_state: test-fail
+concepts:
+  - fuzzing
+  - fuzz-targets
+  - regression-corpus
+difficulty: advanced
+lesson_type: unit
+min_go_version: "1.22"
+run_modes:
+  - test
+solution_mode: single-file
+optional: false
+prerequisites:
+  - 12-quality-engineering/01-test-design
+recommended_prerequisites:
+  - 12-quality-engineering/03-property-style-tests

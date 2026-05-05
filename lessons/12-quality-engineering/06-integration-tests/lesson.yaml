@@ -1,10 +1,10 @@
-package: testdesign
-title: Test Design Patterns
+package: integrationtests
+title: Integration Testing Patterns
 unsolved_state: test-fail
 concepts:
-  - table-driven-tests
-  - subtests
-  - test-organizaton
+  - integration-tests
+  - test-helpers
+  - local-services
 difficulty: advanced
 lesson_type: unit
 min_go_version: "1.22"
@@ -13,7 +13,7 @@ run_modes:
 solution_mode: single-file
 optional: false
 prerequisites:
-  - 05-testing/01-table-driven-tests
+  - 12-quality-engineering/01-test-design
   - 06-interfaces-and-fakes/01-interfaces
 recommended_prerequisites:
-  - 07-basic-concurrency/01-channels
+  - 12-quality-engineering/05-contract-tests

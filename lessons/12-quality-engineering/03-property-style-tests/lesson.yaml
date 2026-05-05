@@ -1,0 +1,18 @@
+package: propertytests
+title: Property-Based Testing
+unsolved_state: test-fail
+concepts:
+  - property-based-testing
+  - go-quickcheck
+  - generative-tests
+difficulty: advanced
+lesson_type: unit
+min_go_version: "1.22"
+run_modes:
+  - test
+solution_mode: single-file
+optional: false
+prerequisites:
+  - 12-quality-engineering/01-test-design
+recommended_prerequisites:
+  - 11-advanced-concurrency/04-context-propagation

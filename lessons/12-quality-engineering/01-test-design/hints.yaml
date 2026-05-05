@@ -1,0 +1,10 @@
+hints:
+  - level: 1
+    category: concept
+    text: Table-driven tests organize test cases as data structures, making it easy to add new test cases without creating new test functions.
+  - level: 2
+    category: design
+    text: Use subtests (t.Run) to give each test case a descriptive name and isolate failures.
+  - level: 3
+    category: testing
+    text: Cover edge cases: empty slices, single elements, negative numbers, and equal values.

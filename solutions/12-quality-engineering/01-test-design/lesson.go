@@ -1,3 +1,5 @@
+//go:build ignore
+
 // Package testdesign provides lessons on test design patterns.
 package testdesign
 
