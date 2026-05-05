@@ -1,0 +1,5 @@
+hints:
+  - Start by implementing the Add function. It should return the sum of two integers (a + b).
+  - For Multiply, return the product of two integers (a * b).
+  - Table-driven tests use a slice of test cases. Each case has a name, inputs, and expected output.
+  - Use t.Run to run each test case with a descriptive name.
