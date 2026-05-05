@@ -1,0 +1,7 @@
+title: Generic Functions
+description: Learn to write type-safe generic functions in Go using type parameters and constraints
+track: 08-generics-and-type-design
+order: 1
+type: exercise
+difficulty: intermediate
+single_file_solution: true

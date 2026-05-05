@@ -1,0 +1,6 @@
+hints:
+  - Use type parameters with the `[T Constraint]` syntax
+  - Define constraints using interface with union types like `int | float64`
+  - Generic functions work with any type satisfying the constraint
+  - The `+` operator requires types that support it (integers, floats)
+  - FizzBuzz is a regular function, not generic - it takes int and returns string

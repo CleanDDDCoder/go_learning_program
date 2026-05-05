@@ -1,0 +1,6 @@
+hints:
+  - Use type parameters with the `[T any]` syntax on structs
+  - Generic types can be instantiated with any type using `Stack[int]` or `Stack[string]`
+  - Methods on generic types redeclare the type parameter: `func (s *Stack[T]) Pop() T`
+  - When stack is empty, Pop should return the zero value of the type
+  - The `any` constraint is equivalent to `interface{}` in older Go versions
