@@ -1,0 +1,8 @@
+package pipelines
+title: Pipelines
+unsolved_state: test-fail
+concepts:
+  - pipeline patterns
+  - fan-out fan-in
+  - stage composition
+difficulty: intermediate

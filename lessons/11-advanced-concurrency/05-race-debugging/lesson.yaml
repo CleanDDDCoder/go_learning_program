@@ -1,0 +1,8 @@
+package race_debugging
+title: Race Debugging
+unsolved_state: test-fail
+concepts:
+  - data races
+  - race detector
+  - mutex synchronization
+difficulty: intermediate

@@ -1,0 +1,8 @@
+package shared_state
+title: Shared State
+unsolved_state: test-fail
+concepts:
+  - sync primitives
+  - mutex
+  - atomic operations
+difficulty: intermediate

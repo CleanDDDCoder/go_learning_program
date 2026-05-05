@@ -1,0 +1,8 @@
+package select_and_backpressure
+title: Select and Backpressure
+unsolved_state: test-fail
+concepts:
+  - select statements
+  - non-blocking operations
+  - backpressure
+difficulty: intermediate

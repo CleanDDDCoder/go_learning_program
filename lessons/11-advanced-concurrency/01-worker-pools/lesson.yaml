@@ -1,0 +1,8 @@
+package: worker_pools
+title: Worker Pools
+unsolved_state: test-fail
+concepts:
+  - worker pools
+  - bounded parallelism
+  - goroutine lifecycle
+difficulty: intermediate

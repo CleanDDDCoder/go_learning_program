@@ -1,0 +1,8 @@
+package: test_design
+title: Test Design
+unsolved_state: test-fail
+concepts:
+  - test design
+  - table-driven tests
+  - test organization
+difficulty: intermediate

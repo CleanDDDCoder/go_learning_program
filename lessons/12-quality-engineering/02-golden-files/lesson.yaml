@@ -1,0 +1,8 @@
+package: golden_files
+title: Golden Files
+unsolved_state: test-fail
+concepts:
+  - golden files
+  - test fixtures
+  - compare output
+difficulty: intermediate
