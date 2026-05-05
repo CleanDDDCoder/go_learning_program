@@ -85,3 +85,25 @@ tracks:
         title: Channels and Goroutines
       - path: lessons/07-basic-concurrency/02-context-cancellation
         title: Context Cancellation
+  - id: 08-generics-and-type-design
+    title: Generics and Type Design
+    description: Type parameters, constraints, and generic programming patterns
+    lessons:
+      - path: lessons/08-generics-and-type-design/01-generic-functions
+        title: Generic Functions
+      - path: lessons/08-generics-and-type-design/02-generic-types
+        title: Generic Types
+  - id: 09-packages-modules-and-api-design
+    title: Packages, Modules, and API Design
+    description: Design packages, work with modules, and create well-structured APIs
+    lessons:
+      - path: lessons/09-packages-modules-and-api-design/01-package-design
+        title: Package Design
+  - id: 10-errors-context-and-boundaries
+    title: Errors, Context, and Boundaries
+    description: Advanced error handling, context patterns, and component boundaries
+    lessons:
+      - path: lessons/10-errors-context-and-boundaries/01-error-wrapping
+        title: Error Wrapping
+      - path: lessons/10-errors-context-and-boundaries/02-context-boundaries
+        title: Context Boundaries

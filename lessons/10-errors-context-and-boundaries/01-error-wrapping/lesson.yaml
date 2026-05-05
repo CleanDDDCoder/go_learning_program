@@ -1,0 +1,4 @@
+title: "Error Wrapping and Inspection"
+description: Learn to wrap errors with context using fmt.Errorf and the %w verb, and inspect wrapped errors using errors.Is and errors.As.
+difficulty: intermediate
+exercise_count: 2

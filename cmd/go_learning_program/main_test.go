@@ -94,13 +94,22 @@ func TestRunTestShowsEndOfCurriculum(t *testing.T) {
 		t.Skip("skipping subprocess test in short mode")
 	}
 
+	root, err := findProjectRoot()
+	if err != nil {
+		t.Fatalf("findProjectRoot() error = %v", err)
+	}
+	lessons, err := loadCurriculum(root + string(os.PathSeparator) + "curriculum.yaml")
+	if err != nil {
+		t.Fatalf("loadCurriculum() error = %v", err)
+	}
+	lastLesson := strings.TrimPrefix(lessons[len(lessons)-1].Path, "lessons/")
 	var stdout bytes.Buffer
 	var stderr bytes.Buffer
-	code := run([]string{"test", "07-basic-concurrency/02-context-cancellation"}, &stdout, &stderr)
+	code := run([]string{"test", lastLesson}, &stdout, &stderr)
 	if code != 0 {
 		t.Fatalf("run test exit = %d, stderr = %s", code, stderr.String())
 	}
-	if !strings.Contains(stdout.String(), "PASS 07-basic-concurrency/02-context-cancellation") {
+	if !strings.Contains(stdout.String(), "PASS "+lastLesson) {
 		t.Fatalf("test output missing pass summary: %s", stdout.String())
 	}
 	if !strings.Contains(stdout.String(), "You've completed the curriculum. Nice work.") {
