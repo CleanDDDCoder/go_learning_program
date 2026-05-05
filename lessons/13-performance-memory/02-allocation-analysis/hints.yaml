@@ -1,0 +1,2 @@
+hint: Use make([]string, 0, len(items)) to pre-allocate the result slice with capacity.
+hint: Use strings.Builder and its Grow method to pre-allocate capacity for string concatenation.

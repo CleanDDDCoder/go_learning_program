@@ -1,0 +1,5 @@
+title: Execution Traces
+description: Learn to use Go's runtime/trace package to analyze execution traces.
+difficulty: intermediate
+track: 13-performance-memory
+order: 5

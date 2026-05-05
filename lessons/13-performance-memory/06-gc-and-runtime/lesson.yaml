@@ -1,0 +1,5 @@
+title: Garbage Collection and Runtime
+description: Understand Go's garbage collector and runtime behavior for optimization.
+difficulty: advanced
+track: 13-performance-memory
+order: 6

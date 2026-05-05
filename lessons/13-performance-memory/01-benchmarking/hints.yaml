@@ -1,0 +1,1 @@
+hint: Use b.ReportAllocs() to measure memory allocations in benchmarks.

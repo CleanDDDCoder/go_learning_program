@@ -1,0 +1,5 @@
+title: pprof Profiling
+description: Learn to use Go's pprof tool to analyze CPU and memory profiles.
+difficulty: intermediate
+track: 13-performance-memory
+order: 4

@@ -1,0 +1,5 @@
+title: Allocation Analysis
+description: Learn to analyze and reduce memory allocations using pprof and runtime metrics.
+difficulty: intermediate
+track: 13-performance-memory
+order: 2

@@ -1,0 +1,5 @@
+title: Escape Analysis
+description: Learn how Go determines whether variables allocate on the stack or heap using escape analysis.
+difficulty: intermediate
+track: 13-performance-memory
+order: 3
