@@ -1,3 +1,3 @@
-module github.com/go-learning-program/go_learning_program
+module go_learning_program
 
 go 1.22
