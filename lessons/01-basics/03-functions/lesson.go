@@ -2,10 +2,10 @@ package functions
 
 // Add returns the sum of two integers.
 func Add(a, b int) int {
-	return 0 // TODO: return a + b
+	return a + b
 }
 
 // Multiply returns the product of two integers.
 func Multiply(a, b int) int {
-	return 0 // TODO: return a * b
+	return a * b
 }
