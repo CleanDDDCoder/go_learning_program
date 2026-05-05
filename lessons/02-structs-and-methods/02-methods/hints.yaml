@@ -1,0 +1,6 @@
+- hint: Methods look like functions with a receiver before the method name.
+  level: 1
+- hint: Area is width multiplied by height.
+  level: 2
+- hint: Perimeter is two times width plus height.
+  level: 3

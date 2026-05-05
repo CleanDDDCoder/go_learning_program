@@ -1,6 +1,6 @@
-- hint: The zero value for strings in Go is an empty string "".
+- hint: Return the exact string the test expects.
   level: 1
-- hint: You need to declare a variable using the `var` keyword or `:=` shorthand.
+- hint: String comparisons in the tests are case-sensitive.
   level: 2
-- hint: The variable should be named `name` and hold a string value like "Alice".
+- hint: The function should return "Hello, World!" including punctuation.
   level: 3

@@ -1,0 +1,6 @@
+- hint: A range loop can visit every value in a slice.
+  level: 1
+- hint: Check len(values) before reading the last index.
+  level: 2
+- hint: The last index is len(values)-1.
+  level: 3

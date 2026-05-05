@@ -1,0 +1,6 @@
+- hint: Use select to wait on both ctx.Done() and the input channel.
+  level: 1
+- hint: Return collected values when the channel closes.
+  level: 2
+- hint: The timeout in the test is only a safety guard; cancellation drives the assertion.
+  level: 3

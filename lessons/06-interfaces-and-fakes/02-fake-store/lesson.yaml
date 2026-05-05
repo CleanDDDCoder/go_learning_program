@@ -1,0 +1,8 @@
+package: fake_store
+title: Fake Store
+unsolved_state: test-fail
+concepts:
+  - interfaces
+  - fakes
+  - error propagation
+difficulty: beginner

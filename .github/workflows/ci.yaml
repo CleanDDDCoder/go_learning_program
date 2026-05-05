@@ -10,7 +10,7 @@ jobs:
   validate-curriculum:
     name: Validate Curriculum
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -33,32 +33,66 @@ jobs:
 
       - name: Validate metadata
         run: |
-          # Check that curriculum.yaml exists
           if [ ! -f "curriculum.yaml" ]; then
             echo "curriculum.yaml not found"
             exit 1
           fi
+          lesson_paths=$(awk '/path: lessons\// { print $3 }' curriculum.yaml)
+          if [ -z "$lesson_paths" ]; then
+            echo "curriculum.yaml does not list lessons"
+            exit 1
+          fi
+          for dir in $lesson_paths; do
+            for file in lesson.go lesson_test.go lesson.yaml hints.yaml; do
+              if [ ! -f "$dir/$file" ]; then
+                echo "Missing $file in $dir"
+                exit 1
+              fi
+            done
+            if grep -Eq '^(id|track):' "$dir/lesson.yaml"; then
+              echo "lesson.yaml must not redeclare id or track in $dir"
+              exit 1
+            fi
+            for key in package title unsolved_state concepts difficulty; do
+              if ! grep -Eq "^$key:" "$dir/lesson.yaml"; then
+                echo "Missing $key in $dir/lesson.yaml"
+                exit 1
+              fi
+            done
+          done
 
-      - name: Validate lessons structure
+      - name: Validate solution overlays
         run: |
-          # Check unsolved-state validation
-          for dir in lessons/*/*/; do
-            if [ ! -f "$dir/lesson.yaml" ]; then
-              echo "Missing lesson.yaml in $dir"
+          lesson_paths=$(awk '/path: lessons\// { print $3 }' curriculum.yaml)
+          for dir in $lesson_paths; do
+            rel=${dir#lessons/}
+            solution_dir="solutions/$rel"
+            if [ ! -f "$solution_dir/lesson.go" ]; then
+              echo "Missing solution for $dir"
+              exit 1
+            fi
+            count=$(find "$solution_dir" -maxdepth 1 -name "*.go" | wc -l)
+            if [ "$count" -ne 1 ]; then
+              echo "Solution directory must contain exactly one .go file: $solution_dir"
+              exit 1
+            fi
+            if [ "$(head -n 1 "$solution_dir/lesson.go")" != "//go:build ignore" ]; then
+              echo "Solution must start with //go:build ignore: $solution_dir/lesson.go"
               exit 1
             fi
           done
 
-      - name: Run pedagogical tests (unsolved state)
-        run: go test ./lessons/...
+      - name: Run tests
+        run: go test ./...
 
-      - name: Check for extra solution files
+      - name: Validate solved state
         run: |
-          # CI fails on extra MVP solution .go files
-          for dir in lessons/*/*/; do
-            count=$(find "$dir" -maxdepth 1 -name "*.go" | wc -l)
-            if [ "$count" -gt 2 ]; then
-              echo "Extra .go files found in $dir"
-              exit 1
-            fi
+          tmp=$(mktemp -d)
+          cp -R . "$tmp/project"
+          cd "$tmp/project"
+          lesson_paths=$(awk '/path: lessons\// { print $3 }' curriculum.yaml)
+          for dir in $lesson_paths; do
+            rel=${dir#lessons/}
+            tail -n +3 "solutions/$rel/lesson.go" > "$dir/lesson.go"
           done
+          go test ./...

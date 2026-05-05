@@ -1,0 +1,6 @@
+- hint: The production function should only depend on the Store interface.
+  level: 1
+- hint: The fake records key and value so the test can inspect side effects.
+  level: 2
+- hint: Return the error from store.Save unchanged.
+  level: 3

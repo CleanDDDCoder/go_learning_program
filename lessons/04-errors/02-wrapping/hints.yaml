@@ -1,0 +1,6 @@
+- hint: fmt.Errorf can wrap errors with the %w verb.
+  level: 1
+- hint: Return nil when the input error is nil.
+  level: 2
+- hint: Include the filename in the message before wrapping the original error.
+  level: 3

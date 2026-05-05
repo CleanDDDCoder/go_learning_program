@@ -6,9 +6,9 @@ import (
 
 func TestIntToString(t *testing.T) {
 	tests := []struct {
-		name     string
-		input    int
-		want     string
+		name  string
+		input int
+		want  string
 	}{
 		{"positive", 42, "42"},
 		{"zero", 0, "0"},

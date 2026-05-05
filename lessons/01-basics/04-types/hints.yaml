@@ -1,0 +1,6 @@
+- hint: The strconv package converts between strings and numbers.
+  level: 1
+- hint: Itoa handles integer-to-string conversion directly.
+  level: 2
+- hint: Atoi returns a value and an error; return 0 when the error is non-nil.
+  level: 3

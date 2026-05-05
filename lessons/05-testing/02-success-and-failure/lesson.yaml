@@ -1,0 +1,8 @@
+package: success_failure
+title: Success and Failure Paths
+unsolved_state: test-fail
+concepts:
+  - tests
+  - success paths
+  - failure paths
+difficulty: beginner

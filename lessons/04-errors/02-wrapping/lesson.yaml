@@ -1,0 +1,7 @@
+package: wrapping
+title: Wrapping Errors
+unsolved_state: test-fail
+concepts:
+  - error wrapping
+  - errors.Is
+difficulty: beginner

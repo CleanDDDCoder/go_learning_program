@@ -1,0 +1,6 @@
+- hint: Return specific errors for specific validation failures.
+  level: 1
+- hint: Check for an empty username before checking length.
+  level: 2
+- hint: A valid username returns nil.
+  level: 3

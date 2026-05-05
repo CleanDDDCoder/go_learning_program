@@ -1,0 +1,6 @@
+- hint: Start with an empty result slice.
+  level: 1
+- hint: Use value%2 == 0 to identify even numbers.
+  level: 2
+- hint: Append matching values in the order you encounter them.
+  level: 3

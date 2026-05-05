@@ -1,0 +1,6 @@
+- hint: Store the latest non-nil error so it can be returned later.
+  level: 1
+- hint: Return nil immediately when fn succeeds.
+  level: 2
+- hint: The loop should run at most attempts times.
+  level: 3

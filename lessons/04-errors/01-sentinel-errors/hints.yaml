@@ -1,0 +1,6 @@
+- hint: Sentinel errors are package variables created with errors.New.
+  level: 1
+- hint: Return ErrNotFound when the map lookup misses.
+  level: 2
+- hint: Return nil error when a name is found.
+  level: 3

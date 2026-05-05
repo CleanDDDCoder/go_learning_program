@@ -1,0 +1,6 @@
+- hint: Write the happy path first, then handle the error path.
+  level: 1
+- hint: A zero divisor should return ErrDivideByZero.
+  level: 2
+- hint: Successful division returns a nil error.
+  level: 3

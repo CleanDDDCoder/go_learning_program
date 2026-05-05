@@ -1,0 +1,6 @@
+- hint: Constructor functions usually return a fully initialized value.
+  level: 1
+- hint: Increment needs a pointer receiver so it can mutate the Counter.
+  level: 2
+- hint: Use Counter{Value: start} in NewCounter.
+  level: 3

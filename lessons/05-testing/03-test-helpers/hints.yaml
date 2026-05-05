@@ -1,0 +1,6 @@
+- hint: strconv.Atoi converts numeric text to an int.
+  level: 1
+- hint: Return an error when the port is outside 1 through 65535.
+  level: 2
+- hint: Test helpers should call t.Helper().
+  level: 3

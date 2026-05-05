@@ -1,0 +1,6 @@
+- hint: strings.Fields splits text on runs of whitespace.
+  level: 1
+- hint: Initialize an empty map before the loop.
+  level: 2
+- hint: counts[word]++ increments a map value.
+  level: 3

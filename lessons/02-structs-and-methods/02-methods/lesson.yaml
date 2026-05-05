@@ -1,0 +1,7 @@
+package: methods
+title: Methods
+unsolved_state: test-fail
+concepts:
+  - methods
+  - value receivers
+difficulty: beginner

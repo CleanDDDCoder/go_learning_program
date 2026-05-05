@@ -1,0 +1,6 @@
+- hint: Embed Contact by listing the type name without a field name.
+  level: 1
+- hint: Embedded fields promote Contact.Name to Employee.Name.
+  level: 2
+- hint: Label joins the promoted name, a separator, and the role.
+  level: 3

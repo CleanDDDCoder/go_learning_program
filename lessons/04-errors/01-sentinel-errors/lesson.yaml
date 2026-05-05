@@ -1,0 +1,7 @@
+package: sentinel_errors
+title: Sentinel Errors
+unsolved_state: test-fail
+concepts:
+  - errors
+  - sentinel errors
+difficulty: beginner

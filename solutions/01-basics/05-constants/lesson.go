@@ -3,7 +3,7 @@
 package constants
 
 const (
-	Sunday   = iota
+	Sunday = iota
 	Monday
 	Tuesday
 	Wednesday

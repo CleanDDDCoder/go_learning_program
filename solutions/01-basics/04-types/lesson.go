@@ -11,6 +11,9 @@ func IntToString(n int) string {
 
 // StringToInt converts a string to an integer.
 func StringToInt(s string) int {
-	n, _ := strconv.Atoi(s)
+	n, err := strconv.Atoi(s)
+	if err != nil {
+		return 0
+	}
 	return n
 }

@@ -1,0 +1,7 @@
+package: slices
+title: Slices
+unsolved_state: test-fail
+concepts:
+  - slices
+  - range loops
+difficulty: beginner

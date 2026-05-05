@@ -1,0 +1,6 @@
+- hint: Accept behavior through the Greeter interface, not a concrete type.
+  level: 1
+- hint: Call greeter.Greet with the supplied name.
+  level: 2
+- hint: The fake records the name to prove the dependency was used.
+  level: 3

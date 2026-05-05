@@ -6,9 +6,9 @@ import (
 
 func TestDaysOfWeek(t *testing.T) {
 	tests := []struct {
-		name  string
-		day   int
-		want  string
+		name string
+		day  int
+		want string
 	}{
 		{"Sunday", 0, "Sunday"},
 		{"Monday", 1, "Monday"},

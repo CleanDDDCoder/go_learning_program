@@ -1,0 +1,8 @@
+package: context_cancellation
+title: Context Cancellation
+unsolved_state: test-fail
+concepts:
+  - context
+  - cancellation
+  - channels
+difficulty: beginner

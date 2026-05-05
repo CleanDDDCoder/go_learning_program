@@ -1,0 +1,6 @@
+- hint: A range loop over a map gives keys and values.
+  level: 1
+- hint: The comma-ok form can distinguish missing keys from zero values.
+  level: 2
+- hint: Use _, ok := inventory[item] in HasItem.
+  level: 3

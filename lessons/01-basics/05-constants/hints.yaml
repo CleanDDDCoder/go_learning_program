@@ -1,0 +1,6 @@
+- hint: Use a const block with iota to assign consecutive values.
+  level: 1
+- hint: A switch statement is a good fit for mapping day numbers to names.
+  level: 2
+- hint: Return an empty string from the default switch branch.
+  level: 3

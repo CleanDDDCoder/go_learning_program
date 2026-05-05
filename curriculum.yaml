@@ -17,3 +17,71 @@ tracks:
         title: Variables
       - path: lessons/01-basics/03-functions
         title: Functions
+      - path: lessons/01-basics/04-types
+        title: Types
+      - path: lessons/01-basics/05-constants
+        title: Constants
+  - id: 02-structs-and-methods
+    title: Structs and Methods
+    description: Group data and behavior with structs and methods
+    lessons:
+      - path: lessons/02-structs-and-methods/01-struct-fields
+        title: Struct Fields
+      - path: lessons/02-structs-and-methods/02-methods
+        title: Methods
+      - path: lessons/02-structs-and-methods/03-constructors
+        title: Constructors
+      - path: lessons/02-structs-and-methods/04-embedding
+        title: Embedding
+  - id: 03-collections
+    title: Collections
+    description: Work with slices and maps
+    lessons:
+      - path: lessons/03-collections/01-slices
+        title: Slices
+      - path: lessons/03-collections/02-maps
+        title: Maps
+      - path: lessons/03-collections/03-filtering
+        title: Filtering
+      - path: lessons/03-collections/04-word-count
+        title: Word Count
+  - id: 04-errors
+    title: Errors
+    description: Return, compare, wrap, and validate errors
+    lessons:
+      - path: lessons/04-errors/01-sentinel-errors
+        title: Sentinel Errors
+      - path: lessons/04-errors/02-wrapping
+        title: Wrapping Errors
+      - path: lessons/04-errors/03-validation
+        title: Validation
+      - path: lessons/04-errors/04-retry
+        title: Retry
+  - id: 05-testing
+    title: Testing
+    description: Write maintainable tests for success and failure behavior
+    lessons:
+      - path: lessons/05-testing/01-table-driven-tests
+        title: Table-Driven Tests
+      - path: lessons/05-testing/02-success-and-failure
+        title: Success and Failure Paths
+      - path: lessons/05-testing/03-test-helpers
+        title: Test Helpers
+  - id: 06-interfaces-and-fakes
+    title: Interfaces and Fakes
+    description: Use small interfaces and fake dependencies in tests
+    lessons:
+      - path: lessons/06-interfaces-and-fakes/01-small-interfaces
+        title: Small Interfaces
+      - path: lessons/06-interfaces-and-fakes/02-fake-store
+        title: Fake Store
+      - path: lessons/06-interfaces-and-fakes/03-notifier
+        title: Notifier
+  - id: 07-basic-concurrency
+    title: Basic Concurrency
+    description: Deterministic channel and context exercises
+    lessons:
+      - path: lessons/07-basic-concurrency/01-channels
+        title: Channels and Goroutines
+      - path: lessons/07-basic-concurrency/02-context-cancellation
+        title: Context Cancellation

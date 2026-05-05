@@ -1,0 +1,6 @@
+- hint: Keep the Notifier interface small and focused.
+  level: 1
+- hint: The fake should record both arguments passed to Notify.
+  level: 2
+- hint: SendWelcome returns the error from Notify.
+  level: 3

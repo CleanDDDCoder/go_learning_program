@@ -1,0 +1,7 @@
+package: struct_fields
+title: Struct Fields
+unsolved_state: test-fail
+concepts:
+  - structs
+  - fields
+difficulty: beginner

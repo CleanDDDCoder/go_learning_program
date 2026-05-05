@@ -1,0 +1,7 @@
+package: word_count
+title: Word Count
+unsolved_state: test-fail
+concepts:
+  - maps
+  - strings
+difficulty: beginner

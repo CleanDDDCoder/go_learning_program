@@ -1,0 +1,8 @@
+package: filtering
+title: Filtering
+unsolved_state: test-fail
+concepts:
+  - slices
+  - append
+  - conditionals
+difficulty: beginner

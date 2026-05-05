@@ -15,11 +15,15 @@
 
 ### Tracks
 1. **01-basics** - Go Basics
-   - Description: Fundamental Go concepts for beginners
-   - Lessons:
-     - `lessons/01-basics/01-hello-world` - Hello World
-     - `lessons/01-basics/02-variables` - Variables
-     - `lessons/01-basics/03-functions` - Functions
+2. **02-structs-and-methods** - Structs and Methods
+3. **03-collections** - Collections
+4. **04-errors** - Errors
+5. **05-testing** - Testing
+6. **06-interfaces-and-fakes** - Interfaces and Fakes
+7. **07-basic-concurrency** - Basic Concurrency
+
+The curriculum currently lists 25 lessons, meeting the MVP floor of 24
+exercises while leaving room for later expansion.
 
 ### Design Notes
 - YAML-based curriculum configuration

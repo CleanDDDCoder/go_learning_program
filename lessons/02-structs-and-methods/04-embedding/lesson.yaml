@@ -1,0 +1,7 @@
+package: embedding
+title: Embedding
+unsolved_state: test-fail
+concepts:
+  - embedding
+  - promoted fields
+difficulty: beginner

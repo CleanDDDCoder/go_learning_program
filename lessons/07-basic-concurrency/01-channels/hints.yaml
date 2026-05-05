@@ -1,11 +1,6 @@
-hints:
-  - |
-    Use `for...range` to read from a channel until it's closed.
-    The range loop automatically exits when the channel is closed.
-  - |
-    Make sure to close the channel after sending all numbers.
-    Use `defer close(ch)` to ensure it closes even if there's a panic.
-  - |
-    Channels can be directional: `<-chan` for receiving only, 
-    `chan<-` for sending only. The function signature tells you
-    which direction is allowed.
+- hint: Use for range to read from a channel until it is closed.
+  level: 1
+- hint: Close the channel after sending all numbers.
+  level: 2
+- hint: Directional channel parameters show which functions receive and send.
+  level: 3

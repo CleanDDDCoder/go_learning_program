@@ -1,0 +1,6 @@
+- hint: Define exported Name and Age fields on the Person struct.
+  level: 1
+- hint: fmt.Sprintf can format a string with the person's fields.
+  level: 2
+- hint: The expected sentence uses the exact form "<name> is <age>".
+  level: 3

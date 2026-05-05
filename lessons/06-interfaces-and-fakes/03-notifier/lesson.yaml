@@ -1,0 +1,8 @@
+package: notifier
+title: Notifier
+unsolved_state: test-fail
+concepts:
+  - interfaces
+  - fake dependencies
+  - side effects
+difficulty: beginner

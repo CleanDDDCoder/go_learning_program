@@ -1,0 +1,8 @@
+package: small_interfaces
+title: Small Interfaces
+unsolved_state: test-fail
+concepts:
+  - interfaces
+  - dependency injection
+  - fakes
+difficulty: beginner
