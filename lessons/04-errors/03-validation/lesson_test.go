@@ -34,3 +34,12 @@ func TestValidateUsername(t *testing.T) {
 		})
 	}
 }
+
+func TestValidationErrors(t *testing.T) {
+	if ErrEmptyUsername == nil {
+		t.Fatal("ErrEmptyUsername should not be nil")
+	}
+	if ErrShortUsername == nil {
+		t.Fatal("ErrShortUsername should not be nil")
+	}
+}

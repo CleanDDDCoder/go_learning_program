@@ -1,0 +1,14 @@
+title: Library API Design
+difficulty: expert
+concepts:
+  - api-design
+  - go-interface
+  - backward-compatibility
+run_modes:
+  - test
+  - race
+min_go_version: "1.22"
+optional: false
+prerequisites:
+  - 09-packages-modules-and-api-design
+estimated_scope: multi-session
