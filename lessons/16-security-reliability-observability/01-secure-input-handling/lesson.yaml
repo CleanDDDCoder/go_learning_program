@@ -1,0 +1,8 @@
+package: secure_input_handling
+title: Secure Input Handling
+unsolved_state: test-fail
+concepts:
+  - input validation
+  - string sanitization
+  - security
+difficulty: intermediate

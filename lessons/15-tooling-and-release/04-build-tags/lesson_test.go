@@ -1,6 +1,7 @@
 package buildtags
 
 import (
+	"runtime"
 	"testing"
 )
 

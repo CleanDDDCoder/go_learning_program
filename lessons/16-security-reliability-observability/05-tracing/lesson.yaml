@@ -1,0 +1,8 @@
+package: tracing
+title: Distributed Tracing
+unsolved_state: test-fail
+concepts:
+  - tracing
+  - opentelemetry
+  - context propagation
+difficulty: intermediate

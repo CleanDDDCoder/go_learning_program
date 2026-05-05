@@ -1,0 +1,9 @@
+package: reliability_patterns
+title: Reliability Patterns
+unsolved_state: test-fail
+concepts:
+  - retry patterns
+  - circuit breakers
+  - timeouts
+  - graceful degradation
+difficulty: intermediate

@@ -2,6 +2,7 @@ package meta
 
 import (
 	"testing"
+	"time"
 )
 
 func TestGetVersion(t *testing.T) {

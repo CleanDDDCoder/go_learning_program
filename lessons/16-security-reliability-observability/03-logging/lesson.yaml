@@ -1,0 +1,8 @@
+package: logging
+title: Structured Logging
+unsolved_state: test-fail
+concepts:
+  - logging
+  - structured logging
+  - log levels
+difficulty: intermediate
