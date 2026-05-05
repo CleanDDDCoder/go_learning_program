@@ -8,10 +8,10 @@ import (
 
 func TestSum(t *testing.T) {
 	tests := []struct {
-		name     string
-		a        int
-		b        int
-		want     int
+		name string
+		a    int
+		b    int
+		want int
 	}{
 		{"positive numbers", 1, 2, 3},
 		{"negative numbers", -1, -2, -3},
@@ -31,10 +31,10 @@ func TestSum(t *testing.T) {
 
 func TestMax(t *testing.T) {
 	tests := []struct {
-		name     string
-		a        int
-		b        int
-		want     int
+		name string
+		a    int
+		b    int
+		want int
 	}{
 		{"a is greater", 5, 3, 5},
 		{"b is greater", 2, 8, 8},
@@ -56,10 +56,10 @@ func TestMax(t *testing.T) {
 
 func TestMin(t *testing.T) {
 	tests := []struct {
-		name     string
-		a        int
-		b        int
-		want     int
+		name string
+		a    int
+		b    int
+		want int
 	}{
 		{"a is smaller", 3, 5, 3},
 		{"b is smaller", 8, 2, 2},
@@ -81,9 +81,9 @@ func TestMin(t *testing.T) {
 
 func TestReverse(t *testing.T) {
 	tests := []struct {
-		name     string
-		input    []string
-		want     []string
+		name  string
+		input []string
+		want  []string
 	}{
 		{"three elements", []string{"a", "b", "c"}, []string{"c", "b", "a"}},
 		{"single element", []string{"x"}, []string{"x"}},

@@ -6,9 +6,9 @@ import (
 
 func TestSum(t *testing.T) {
 	tests := []struct {
-		name     string
-		numbers  []int
-		wantSum  int
+		name    string
+		numbers []int
+		wantSum int
 	}{
 		{"empty slice", []int{}, 0},
 		{"single element", []int{1}, 1},

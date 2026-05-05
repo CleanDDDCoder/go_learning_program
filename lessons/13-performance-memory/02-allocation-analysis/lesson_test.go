@@ -6,9 +6,9 @@ import (
 
 func TestFilterEmpty(t *testing.T) {
 	tests := []struct {
-		name     string
-		items    []string
-		wantRes  []string
+		name    string
+		items   []string
+		wantRes []string
 	}{
 		{"empty slice", []string{}, []string{}},
 		{"all empty", []string{"", "", ""}, []string{}},
