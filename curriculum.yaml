@@ -1,0 +1,19 @@
+# Go Learning Program Curriculum
+
+curriculum:
+  name: Go Learning Program
+  version: 1.0.0
+  go_version: "1.22"
+  description: An interactive Go learning program with lessons and exercises
+
+tracks:
+  - id: 01-basics
+    title: Go Basics
+    description: Fundamental Go concepts for beginners
+    lessons:
+      - path: lessons/01-basics/01-hello-world
+        title: Hello World
+      - path: lessons/01-basics/02-variables
+        title: Variables
+      - path: lessons/01-basics/03-functions
+        title: Functions

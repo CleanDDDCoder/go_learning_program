@@ -1,0 +1,64 @@
+name: Curriculum Integrity CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-curriculum:
+    name: Validate Curriculum
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Check gofmt formatting
+        run: |
+          if [ -n "$(gofmt -l .)" ]; then
+            echo "Formatting issues found:"
+            gofmt -l .
+            exit 1
+          fi
+
+      - name: Run go vet
+        run: go vet ./...
+
+      - name: Validate metadata
+        run: |
+          # Check that curriculum.yaml exists
+          if [ ! -f "curriculum.yaml" ]; then
+            echo "curriculum.yaml not found"
+            exit 1
+          fi
+
+      - name: Validate lessons structure
+        run: |
+          # Check unsolved-state validation
+          for dir in lessons/*/*/; do
+            if [ ! -f "$dir/lesson.yaml" ]; then
+              echo "Missing lesson.yaml in $dir"
+              exit 1
+            fi
+          done
+
+      - name: Run pedagogical tests (unsolved state)
+        run: go test ./lessons/...
+
+      - name: Check for extra solution files
+        run: |
+          # CI fails on extra MVP solution .go files
+          for dir in lessons/*/*/; do
+            count=$(find "$dir" -maxdepth 1 -name "*.go" | wc -l)
+            if [ "$count" -gt 2 ]; then
+              echo "Extra .go files found in $dir"
+              exit 1
+            fi
+          done

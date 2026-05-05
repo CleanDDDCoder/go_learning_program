@@ -1,0 +1,7 @@
+package: constants
+title: Constants
+unsolved_state: test-fail
+concepts:
+  - constants
+  - iota
+difficulty: beginner
