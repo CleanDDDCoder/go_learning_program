@@ -1,0 +1,11 @@
+categories:
+  correctness: Processes accepted events and reports failed work clearly.
+  api-design: Keeps pipeline construction and submission APIs understandable.
+  error-handling: Uses sentinel or wrapped errors for backpressure and shutdown.
+  concurrency-safety: Avoids races and proves goroutine shutdown deterministically.
+  test-quality: Covers worker, cancellation, and backpressure behavior.
+  performance-reasoning: Explains queue size and worker count tradeoffs.
+  security-and-reliability: Handles malformed event payloads defensively.
+  observability: Exposes useful metrics without unbounded cardinality.
+  maintainability: Separates event sources from processing behavior.
+  documentation: Describes operation and at least one design tradeoff.

@@ -606,14 +606,14 @@ func runReview(root string, args []string, capstones []lesson, stdout io.Writer,
 	// Run automated tests to show status
 	testDir := filepath.Join(capstoneDir, "tests")
 	if _, err := os.Stat(testDir); err == nil {
-		cmd := exec.Command("go", "test", "-v", "./"+filepath.Join("capstones", capstonePath, "tests"))
+		testPackage := filepath.ToSlash(filepath.Join("capstones", capstonePath, "tests"))
+		cmd := exec.Command("go", "test", "-v", "./"+testPackage)
 		cmd.Dir = root
-		var output bytes.Buffer
-		cmd.Stdout = &output
-		cmd.Stderr = &output
-		cmd.Run()
+		cmd.Stdout = io.Discard
+		cmd.Stderr = io.Discard
+		err := cmd.Run()
 
-		if strings.Contains(output.String(), "PASS") {
+		if err == nil {
 			fmt.Fprintln(stdout, "Automated tests: PASS (submittable)")
 		} else {
 			fmt.Fprintln(stdout, "Automated tests: FAIL (not yet submittable)")
@@ -1039,15 +1039,7 @@ func loadCapstones(root string) ([]lesson, error) {
 			continue
 		}
 
-		var c struct {
-			Title      string   `yaml:"title"`
-			Difficulty string   `yaml:"difficulty"`
-			RunModes   []string `yaml:"run_modes"`
-			Optional   bool     `yaml:"optional"`
-		}
-		if json.Unmarshal(data, &c) != nil {
-			continue // Skip invalid YAML
-		}
+		c := parseCapstoneYAML(data)
 
 		capstones = append(capstones, lesson{
 			Path:       e.Name(),
@@ -1059,6 +1051,45 @@ func loadCapstones(root string) ([]lesson, error) {
 	}
 
 	return capstones, nil
+}
+
+func parseCapstoneYAML(data []byte) capstone {
+	var c capstone
+	var listField string
+	scanner := bufio.NewScanner(bytes.NewReader(data))
+	for scanner.Scan() {
+		line := strings.TrimSpace(scanner.Text())
+		if line == "" || strings.HasPrefix(line, "#") {
+			continue
+		}
+		switch {
+		case strings.HasPrefix(line, "title:"):
+			c.Title = trimYAMLScalar(strings.TrimPrefix(line, "title:"))
+			listField = ""
+		case strings.HasPrefix(line, "difficulty:"):
+			c.Difficulty = trimYAMLScalar(strings.TrimPrefix(line, "difficulty:"))
+			listField = ""
+		case strings.HasPrefix(line, "estimated_scope:"):
+			c.EstimatedScope = trimYAMLScalar(strings.TrimPrefix(line, "estimated_scope:"))
+			listField = ""
+		case strings.HasPrefix(line, "optional:"):
+			c.Optional = strings.EqualFold(trimYAMLScalar(strings.TrimPrefix(line, "optional:")), "true")
+			listField = ""
+		case strings.HasPrefix(line, "run_modes:"):
+			listField = "run_modes"
+		case strings.HasPrefix(line, "- "):
+			if listField == "run_modes" {
+				c.RunModes = append(c.RunModes, trimYAMLScalar(strings.TrimPrefix(line, "- ")))
+			}
+		default:
+			listField = ""
+		}
+	}
+	return c
+}
+
+func trimYAMLScalar(value string) string {
+	return strings.Trim(strings.TrimSpace(value), `"`)
 }
 
 func loadProgress(root string) (*progressState, error) {

@@ -1,0 +1,11 @@
+categories:
+  correctness: Handles valid and invalid HTTP requests as specified.
+  api-design: Keeps handlers, domain logic, and persistence boundaries separate.
+  error-handling: Reports client and storage failures with appropriate status codes.
+  concurrency-safety: Handles concurrent requests without shared-state races.
+  test-quality: Uses httptest, fakes, and deterministic local fixtures.
+  performance-reasoning: Explains JSON and storage boundary tradeoffs.
+  security-and-reliability: Validates input and avoids credential requirements.
+  observability: Provides useful logs, metrics, or trace propagation.
+  maintainability: Keeps service layers readable and easy to extend.
+  documentation: Explains usage and at least one design tradeoff.

@@ -1,0 +1,11 @@
+categories:
+  correctness: Handles required operations and error cases.
+  api-design: Keeps the public surface small, documented, and stable.
+  error-handling: Exposes inspectable errors without string-only contracts.
+  concurrency-safety: Documents whether the library is safe for concurrent use.
+  test-quality: Covers success, failure, and compatibility behavior.
+  performance-reasoning: Explains allocation or lookup tradeoffs where relevant.
+  security-and-reliability: Avoids unsafe inputs and hidden global state.
+  observability: Provides useful examples or diagnostics without leaking data.
+  maintainability: Separates public behavior from implementation details.
+  documentation: Explains usage and at least one design tradeoff.

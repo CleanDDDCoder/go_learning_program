@@ -1,0 +1,16 @@
+title: Concurrent File Or Event Processor
+difficulty: expert
+concepts:
+  - worker-pools
+  - backpressure
+  - graceful-shutdown
+  - observability
+run_modes:
+  - test
+  - race
+min_go_version: "1.22"
+optional: false
+prerequisites:
+  - 11-advanced-concurrency/01-worker-pools
+  - 11-advanced-concurrency/03-select-and-backpressure
+estimated_scope: multi-session

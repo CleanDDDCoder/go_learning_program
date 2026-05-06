@@ -129,3 +129,74 @@ func TestLoadCurriculumRequiresLessons(t *testing.T) {
 		t.Fatal("loadCurriculum returned nil error for empty curriculum")
 	}
 }
+
+func TestParseCapstoneYAML(t *testing.T) {
+	data := []byte(strings.Join([]string{
+		`title: Production HTTP Service`,
+		`difficulty: expert`,
+		`run_modes:`,
+		`  - test`,
+		`  - race`,
+		`optional: true`,
+		`estimated_scope: portfolio-project`,
+	}, "\n"))
+
+	got := parseCapstoneYAML(data)
+	if got.Title != "Production HTTP Service" {
+		t.Fatalf("Title = %q, want Production HTTP Service", got.Title)
+	}
+	if got.Difficulty != "expert" {
+		t.Fatalf("Difficulty = %q, want expert", got.Difficulty)
+	}
+	if got.EstimatedScope != "portfolio-project" {
+		t.Fatalf("EstimatedScope = %q, want portfolio-project", got.EstimatedScope)
+	}
+	if !got.Optional {
+		t.Fatal("Optional = false, want true")
+	}
+	if len(got.RunModes) != 2 || got.RunModes[0] != "test" || got.RunModes[1] != "race" {
+		t.Fatalf("RunModes = %#v, want [test race]", got.RunModes)
+	}
+}
+
+func TestLoadCapstonesReadsYAMLMetadata(t *testing.T) {
+	root := t.TempDir()
+	capstoneDir := root + string(os.PathSeparator) + "capstones" + string(os.PathSeparator) + "03-production-http-service"
+	if err := os.MkdirAll(capstoneDir, 0o755); err != nil {
+		t.Fatal(err)
+	}
+	metadata := []byte(strings.Join([]string{
+		`title: Production HTTP Service`,
+		`difficulty: expert`,
+		`run_modes:`,
+		`  - test`,
+		`optional: false`,
+		`estimated_scope: multi-session`,
+	}, "\n"))
+	if err := os.WriteFile(capstoneDir+string(os.PathSeparator)+"capstone.yaml", metadata, 0o600); err != nil {
+		t.Fatal(err)
+	}
+
+	got, err := loadCapstones(root)
+	if err != nil {
+		t.Fatalf("loadCapstones() error = %v", err)
+	}
+	if len(got) != 1 {
+		t.Fatalf("len(loadCapstones()) = %d, want 1", len(got))
+	}
+	if got[0].Path != "03-production-http-service" {
+		t.Fatalf("Path = %q, want 03-production-http-service", got[0].Path)
+	}
+	if got[0].Title != "Production HTTP Service" {
+		t.Fatalf("Title = %q, want Production HTTP Service", got[0].Title)
+	}
+	if got[0].Difficulty != "expert" {
+		t.Fatalf("Difficulty = %q, want expert", got[0].Difficulty)
+	}
+	if len(got[0].RunModes) != 1 || got[0].RunModes[0] != "test" {
+		t.Fatalf("RunModes = %#v, want [test]", got[0].RunModes)
+	}
+	if got[0].Optional {
+		t.Fatal("Optional = true, want false")
+	}
+}

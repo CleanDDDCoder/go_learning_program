@@ -1,0 +1,18 @@
+title: Production HTTP Service
+difficulty: expert
+concepts:
+  - http
+  - persistence-boundaries
+  - cancellation
+  - testing
+  - observability
+run_modes:
+  - test
+  - race
+  - integration
+min_go_version: "1.22"
+optional: false
+prerequisites:
+  - 14-production-services/01-http-servers
+  - 14-production-services/04-persistence-boundaries
+estimated_scope: portfolio-project
