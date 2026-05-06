@@ -9,13 +9,16 @@ func TestNewAnalyzer(t *testing.T) {
 	if a == nil {
 		t.Error("NewAnalyzer returned nil")
 	}
-	if a.Name != "test" {
+	if a == nil || a.Name != "test" {
 		t.Errorf("Expected name 'test', got '%s'", a.Name)
 	}
 }
 
 func TestAnalyzerAnalyze(t *testing.T) {
 	a := NewAnalyzer("demo")
+	if a == nil {
+		t.Fatal("NewAnalyzer returned nil")
+	}
 	result := a.Analyze()
 	if result == "" {
 		t.Error("Analyze returned empty string")

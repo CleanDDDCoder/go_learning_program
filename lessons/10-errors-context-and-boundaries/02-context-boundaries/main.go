@@ -6,6 +6,11 @@ import (
 	"time"
 )
 
+// contextKey is a private type to avoid collisions with context values
+type contextKey string
+
+const requestIDKey contextKey = "requestID"
+
 // TODO: Implement FetchData that accepts a context and respects cancellation
 // If the context is cancelled, return early with context.Canceled error
 func FetchData(ctx context.Context, id string) (string, error) {
@@ -22,14 +27,14 @@ func FetchData(ctx context.Context, id string) (string, error) {
 // Use context.WithValue to add a key-value pair to the context
 func AddRequestID(ctx context.Context, requestID string) context.Context {
 	// Use context.WithValue to add the request ID
-	return context.WithValue(ctx, "requestID", requestID)
+	return context.WithValue(ctx, requestIDKey, requestID)
 }
 
 // TODO: Implement GetRequestID that retrieves a request ID from a context
 // Use ctx.Value to retrieve the request ID
 func GetRequestID(ctx context.Context) string {
 	// Retrieve the request ID from context
-	if id, ok := ctx.Value("requestID").(string); ok {
+	if id, ok := ctx.Value(requestIDKey).(string); ok {
 		return id
 	}
 	return ""

@@ -47,6 +47,9 @@ func (t *Tracer) StartSpan(ctx context.Context, name string) context.Context {
 		Parent:     parent,
 	}
 
+	// Track the current span internally
+	t.activeSpan = span
+
 	// Add to parent's children if there's a parent
 	if parent != nil {
 		parent.Children = append(parent.Children, span)
@@ -66,6 +69,12 @@ func (t *Tracer) EndSpan(ctx context.Context) {
 
 	span := spanVal.(*Span)
 	span.EndTime = time.Now()
+	t.activeSpan = nil
+}
+
+// ActiveSpan returns the currently active span, if any
+func (t *Tracer) ActiveSpan() *Span {
+	return t.activeSpan
 }
 
 // AddAttribute adds an attribute to the current span
